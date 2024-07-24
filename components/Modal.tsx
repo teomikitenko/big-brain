@@ -3,14 +3,11 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "./ui/button";
-import React, { useRef } from "react";
-import { createContext, useContext, useState, useEffect } from "react";
+import { useContext, useState} from "react";
 import { ModalContext } from "./Provider";
 import { addAndGenerateData } from "@/app/actions/addAndGenerateData";
 
