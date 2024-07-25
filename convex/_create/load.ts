@@ -1,4 +1,3 @@
-"use node";
 import { v } from "convex/values";
 import { internalAction, action, query } from "../_generated/server";
 import { Document } from "@langchain/core/documents";
@@ -30,17 +29,16 @@ export const loadEmbeddings = action({
       new Document({ pageContent: text }),
     ]);
 
-    const embeddings = new CacheBackedEmbeddings({
+     const embeddings = new CacheBackedEmbeddings({
       underlyingEmbeddings: new OpenAIEmbeddings(),
       documentEmbeddingStore: new ConvexKVStore({ ctx }),
-    });
-
+    }); 
     const vectorStore = await ConvexVectorStore.fromDocuments(
       splitDocs,
       embeddings,
       { ctx }
     );
-  /*   const llm = new ChatOpenAI({
+  /*    const llm = new ChatOpenAI({
       apiKey: process.env.OPENAI_API_KEY,
       model: "gpt-3.5-turbo",
       temperature: 0,
@@ -57,7 +55,7 @@ export const loadEmbeddings = action({
       prompt,
       llm,
       parcer,
-    ]); */
+    ]); */ 
     return vectorStore;
   },
 });

@@ -1,6 +1,5 @@
 import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
-import { title } from "process";
 
 export default defineSchema({
   documents: defineTable({
@@ -13,6 +12,11 @@ export default defineSchema({
   }),
   files:defineTable({
     title:v.string(),
-    describtion:v.string()
-  }).index('by_title',['title'])
+    describtion:v.string(),
+    text:v.string(),
+  }).index('by_title',['title']),
+  cache: defineTable({
+    key: v.string(),
+    value: v.any(),
+  }).index("byKey", ["key"])
 });

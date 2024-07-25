@@ -1,9 +1,11 @@
 "use client";
 import React, { useContext, useEffect, useState } from "react";
 import { useChat, useCompletion } from "ai/react";
-import { addEmbeding } from "@/app/actions/loadEmbeddings";
 import { ModalContext } from "@/components/Provider";
 export const dynamic = "force-dynamic";
+
+
+//TODO - vectoreStore worked.now need return vectoreStore from action and if i start ask question i need send this in askAi action 
 
 const DocumentsPage = () => {
   const [file, setfile] = useState<FileList | null>();

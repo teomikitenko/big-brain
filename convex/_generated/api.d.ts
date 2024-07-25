@@ -14,6 +14,7 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
+import type * as langchain_db from "../langchain/db.js";
 import type * as _add_add from "../_add/add.js";
 import type * as _create_load from "../_create/load.js";
 import type * as _readAll_readAll from "../_readAll/readAll.js";
@@ -27,6 +28,7 @@ import type * as _readAll_readAll from "../_readAll/readAll.js";
  * ```
  */
 declare const fullApi: ApiFromModules<{
+  "langchain/db": typeof langchain_db;
   "_add/add": typeof _add_add;
   "_create/load": typeof _create_load;
   "_readAll/readAll": typeof _readAll_readAll;
