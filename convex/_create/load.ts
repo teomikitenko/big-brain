@@ -16,6 +16,7 @@ import {
 import { pull } from "langchain/hub";
 import { formatDocumentsAsString } from "langchain/util/document";
 
+
 export const loadEmbeddings = action({
   args: {
     text: v.string(),
@@ -33,11 +34,12 @@ export const loadEmbeddings = action({
       underlyingEmbeddings: new OpenAIEmbeddings(),
       documentEmbeddingStore: new ConvexKVStore({ ctx }),
     }); 
-    const vectorStore = await ConvexVectorStore.fromDocuments(
+     const vectorStore = await ConvexVectorStore.fromDocuments(
       splitDocs,
       embeddings,
       { ctx }
     );
+   
   /*    const llm = new ChatOpenAI({
       apiKey: process.env.OPENAI_API_KEY,
       model: "gpt-3.5-turbo",
@@ -59,3 +61,5 @@ export const loadEmbeddings = action({
     return vectorStore;
   },
 });
+
+

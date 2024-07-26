@@ -22,4 +22,5 @@ export async function generateAndAddToDB(fileCard: FileCard) {
     describtion,
     text:fileCard.text
   });
+  return {describtion}
 }

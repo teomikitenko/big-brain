@@ -18,7 +18,7 @@ const Modal = () => {
   e.preventDefault()
  const data = new FormData(e.currentTarget)
  setDocument(data.get('file'))
- await addAndGenerateData(data)
+ const res = await addAndGenerateData(data)
  context?.setShowModal(false)
   }
   return (
