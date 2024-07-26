@@ -20,9 +20,9 @@ import { NextRequest } from "next/server";
 export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
-  const blobFile = await request.blob();
-  const doc = await blobFile.text();
-  const { prompt: question } = await request.json();
+  const  res = await request.json();
+/*   const doc = await blobFile.text();
+  const { prompt: question } = await request.json(); */
 /*   const ragChain: RunnableSequence<any, string> = await fetchAction(
     api._create.load.loadEmbeddings,
     { doc }

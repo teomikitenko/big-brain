@@ -10,7 +10,7 @@ const Provider = ({ children }: { children: React.ReactNode }) => {
   const [showModal, setShowModal] = useState(false);
   const [resultGenerateData, setResultGenerateData] = useState<
     ProviderType["resultGenerateData"] | undefined
-  >(undefined);
+  >();
   return (
     <ModalContext.Provider
       value={{
