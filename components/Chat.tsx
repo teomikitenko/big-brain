@@ -7,11 +7,12 @@ const Chat = () => {
     const context = useContext(ModalContext); 
     const { completion, input, handleInputChange, handleSubmit } = useCompletion({
       api: "/api/chat",
-      body:context?.resultGenerateData?.store
-    }); 
+    }); // 
   return (
+    
     <form className="flex flex-col" onSubmit={handleSubmit}>
     <div>{completion}</div>
+    <label htmlFor="input">Chat</label>
     <input
       name="prompt"
       value={input}
