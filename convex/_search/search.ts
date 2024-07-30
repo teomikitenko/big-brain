@@ -1,7 +1,7 @@
-import { query } from "../_generated/server";
+import { query,action,mutation, internalQuery } from "../_generated/server";
 import { v } from "convex/values";
 
-export const searchDocument = query({
+export const searchDocument = internalQuery({
   args: { id: v.string() },
   handler: async (ctx, args) => {
     const document = await ctx.db

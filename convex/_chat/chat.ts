@@ -11,8 +11,8 @@ import {
 } from "@langchain/core/runnables";
 import { pull } from "langchain/hub";
 import { formatDocumentsAsString } from "langchain/util/document";
-import { fetchAction, fetchQuery } from "convex/nextjs";
-import { api } from "../_generated/api";
+import { fetchAction, fetchQuery,fetchMutation } from "convex/nextjs";
+import { api, internal } from "../_generated/api";
 import { Doc } from "../_generated/dataModel";
 
 
@@ -24,9 +24,9 @@ export const answer = action({
   handler: async (ctx, { question }) => {
     const embeddings = new OpenAIEmbeddings()
     const res = await ctx.vectorSearch('documents','byEmbedding',{
-    vector: await embeddings.embedQuery("Hello world")
+    vector: await embeddings.embedQuery(question)
     })
-    const searchResult:Doc<'documents'> = await fetchQuery(api._search.search.searchDocument,{id:res[0]._id})
+    const searchResult:Doc<'documents'> = await ctx.runQuery(internal._search.search.searchDocument,{id:res[0]._id})
     return searchResult  // continue work
   /*   const vectorStore = new ConvexVectorStore(new OpenAIEmbeddings(), { ctx });
     const llm = new ChatOpenAI({
