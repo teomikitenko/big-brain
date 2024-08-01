@@ -1,13 +1,10 @@
 'use client'
-import { useContext} from "react";
 import { useCompletion } from "ai/react";
-import { ModalContext } from "./Provider";
 
-const Chat = () => {
-    const context = useContext(ModalContext); 
+const Chat = () => { 
     const { completion, input, handleInputChange, handleSubmit } = useCompletion({
       api: "/api/chat",
-    }); // 
+    });  
   return (
     
     <form className="flex flex-col" onSubmit={handleSubmit}>
