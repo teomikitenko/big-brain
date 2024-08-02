@@ -17,7 +17,7 @@ export default function DashboardLayout({
       <div className="h-full w-full flex px-8 pt-10 pb-6">
         <Provider>
           <Navigation />
-          <div className="grow h-full bg-red-400">{children}</div>
+          <div className="grow h-full bg-red-400 px-9 py-4">{children}</div>
           <Modal/>
         </Provider>
       </div>

@@ -24,6 +24,6 @@ export const loadEmbeddings = action({
       underlyingEmbeddings: new OpenAIEmbeddings(),
       documentEmbeddingStore: new ConvexKVStore({ ctx }),
     });
-    await ConvexVectorStore.fromDocuments(splitDocs, embeddings, { ctx });
+    await ConvexVectorStore.fromDocuments(splitDocs, embeddings, { ctx }); // think about logic with embedding id
   },
 });

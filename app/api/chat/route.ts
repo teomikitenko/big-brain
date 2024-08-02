@@ -5,15 +5,10 @@ import {
   RunnableSequence,
   RunnablePassthrough,
 } from "@langchain/core/runnables";
-import { formatDocumentsAsString } from "langchain/util/document";
 import { StringOutputParser } from "@langchain/core/output_parsers";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { ChatOpenAI } from "@langchain/openai";
 import { pull } from "langchain/hub";
-import { NextResponse } from "next/server";
-import { CharacterTextSplitter } from "langchain/text_splitter";
-
-export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
   const { prompt: question } = await request.json();

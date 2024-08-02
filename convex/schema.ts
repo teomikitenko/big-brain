@@ -10,13 +10,13 @@ export default defineSchema({
     vectorField: "embedding",
     dimensions: 1536,
   }),
-  files:defineTable({
-    title:v.string(),
-    describtion:v.string(),
-    text:v.string(),
-  }).index('by_title',['title']),
+  files: defineTable({
+    title: v.string(),
+    describtion: v.string(),
+    text: v.string(),
+  }).index("by_title", ["title"]),
   cache: defineTable({
     key: v.string(),
     value: v.any(),
-  }).index("byKey", ["key"])
+  }).index("byKey", ["key"]),
 });
