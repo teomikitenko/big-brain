@@ -17,10 +17,10 @@ export async function generateAndAddToDB(fileCard: FileCard) {
   ];
   const chain = model.pipe(parser);
   const describtion = await chain.invoke(messages);
-  await fetchMutation(api._add.add.addCard, {
+  const id = await fetchMutation(api._add.add.addCard, {
     title: fileCard.title,
     describtion,
     text:fileCard.text
   });
-  return {describtion}
+  return {describtion,id}
 }

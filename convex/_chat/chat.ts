@@ -14,20 +14,18 @@ import { pull } from "langchain/hub";
 import { formatDocumentsAsString } from "langchain/util/document";
 import { fetchAction, fetchQuery, fetchMutation } from "convex/nextjs";
 import { api, internal } from "../_generated/api";
-import { Doc } from "../_generated/dataModel";
+import { Doc,Id } from "../_generated/dataModel";
+
 
 export const answer = action({
   args: {
-    question: v.string(),
+    id:v.id('files')
   },
-  handler: async (ctx, { question }) => {
-    const embeddings = new OpenAIEmbeddings();
-     const res = await ctx.vectorSearch("documents", "byEmbedding", {
-      vector: await embeddings.embedQuery(question),
-    });
+  handler: async (ctx, {id }) => {
+ 
     const searchResult: Doc<"documents"> = await ctx.runQuery(
       internal._search.search.searchDocument,
-      { id: res[0]._id }
+      { id: id}
     ); 
     return searchResult;
   },

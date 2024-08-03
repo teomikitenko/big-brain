@@ -9,10 +9,12 @@ import { StringOutputParser } from "@langchain/core/output_parsers";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { ChatOpenAI } from "@langchain/openai";
 import { pull } from "langchain/hub";
+import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
-  const { prompt: question } = await request.json();
-  const { embedding } = await fetchAction(api._chat.chat.answer, { question });
+  const {prompt: question,id} = await request.json()
+  //need test this
+  const { embedding } = await fetchAction(api._chat.chat.answer, { id });
   const llm = new ChatOpenAI({
     apiKey: process.env.OPENAI_API_KEY,
     model: "gpt-3.5-turbo",

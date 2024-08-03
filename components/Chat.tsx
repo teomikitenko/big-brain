@@ -1,9 +1,12 @@
 'use client'
 import { useCompletion } from "ai/react";
+import { Id } from "../convex/_generated/dataModel";
 
-const Chat = () => { 
+
+const Chat = ({fileId}:{fileId:Id<'files'>}) => { 
     const { completion, input, handleInputChange, handleSubmit } = useCompletion({
       api: "/api/chat",
+      body:{id:JSON.stringify(fileId)}
     });  
   return (
     

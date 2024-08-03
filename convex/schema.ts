@@ -4,12 +4,13 @@ import { v } from "convex/values";
 export default defineSchema({
   documents: defineTable({
     embedding: v.array(v.number()),
-    text: v.string(),
-    metadata: v.any(),
-  }).vectorIndex("byEmbedding", {
-    vectorField: "embedding",
-    dimensions: 1536,
-  }),
+    fileId: v.id("files"),
+  })
+    .index("byFileId", ["fileId"])
+    .vectorIndex("byEmbedding", {
+      vectorField: "embedding",
+      dimensions: 1536,
+    }),
   files: defineTable({
     title: v.string(),
     describtion: v.string(),
