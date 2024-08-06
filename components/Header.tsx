@@ -7,12 +7,12 @@ const Header = () => {
     <header className="w-full px-8 py-4 bg-slate-200">
       <div className="w-full h-full flex">
         <div className="flex gap-4">
-          <Link href={"/"}>
+          <Link className="flex gap-4" href={"/"}>
             <Image src={"/logo.png"} width={40} height={40} alt="logo" />
-          </Link>
-          <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center">
             <h2 className="font-medium text-xl ">BIGBRAIN</h2>
           </div>
+          </Link>
           <Link className="flex justify-center items-center" href={"/dashboard/documents"}>
             <p>Dashboard</p>
           </Link>

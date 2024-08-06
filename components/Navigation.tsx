@@ -9,7 +9,7 @@ const NavigationPanel = () => {
     { title: "Notes", link: "notes", icon: <Icons.NotesIcon /> },
   ];
   return (
-    <div className="h-full pl-0 pr-14 flex flex-col gap-6 bg-green-500">
+    <div className="h-full pl-0 pr-14 flex flex-col gap-6 ">
       {nav.map((l) => (
         <Link key={l.title} href={l.link}>
           <div className="flex gap-1">

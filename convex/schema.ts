@@ -5,12 +5,11 @@ export default defineSchema({
   documents: defineTable({
     embedding: v.array(v.number()),
     fileId: v.id("files"),
-  })
-    .index("byFileId", ["fileId"])
-    .vectorIndex("byEmbedding", {
-      vectorField: "embedding",
-      dimensions: 1536,
-    }),
+    text: v.string(),
+  }).vectorIndex("byEmbedding", {
+    vectorField: "embedding",
+    dimensions: 1536,
+  }),
   files: defineTable({
     title: v.string(),
     describtion: v.string(),

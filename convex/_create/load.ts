@@ -9,14 +9,18 @@ export const loadEmbeddings = action({
     text: v.string(),
     id: v.id("files"),
   },
-  handler: async (ctx, { text,id }) => {
+  handler: async (ctx, { text, id }) => {
     const textSplitter = new RecursiveCharacterTextSplitter({
       chunkSize: 1000,
       chunkOverlap: 200,
     });
     const splitText = await textSplitter.splitText(text);
-    const embedModel = new OpenAIEmbeddings()
-   const embedding = await embedModel.embedQuery(splitText[0])
-   await ctx.runMutation(internal._add.add.addEmbeddings,{embedding,fileId:id})
+    const embedModel = new OpenAIEmbeddings();
+    const embedding = await embedModel.embedQuery(splitText[0]);
+    await ctx.runMutation(internal._add.add.addEmbeddings, {
+      embedding,
+      fileId: id,
+      text,
+    });
   },
 });

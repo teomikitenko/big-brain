@@ -11,15 +11,13 @@ import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 
-//TODO - implement chat functional this api route
-
 const DocumentsPage = async () => {
   const documents = await fetchQuery(api._getAll.getAll.getAllFiles);
   return (
     <div className="w-full">
       <UploadButton />
       <p>My Documents</p>
-      <div className="grid grid-cols-4">
+      <div className="grid grid-cols-4 gap-2">
       {documents.map((doc) => (
         <Link key={doc._id} href={`documents/${doc._id}`}>
         <Card>

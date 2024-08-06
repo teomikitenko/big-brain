@@ -3,6 +3,7 @@ import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import { fetchAction } from "convex/nextjs";
 import { generateAndAddToDB } from "./addToDB";
+import { revalidatePath } from "next/cache";
 
 export async function addAndGenerateData(formData: FormData) {
   const doc = formData.get("file") as unknown as File;
@@ -13,7 +14,6 @@ export async function addAndGenerateData(formData: FormData) {
     text,
   });
   const vectoreStore = await addEmbeding(text, id);
-
   const resultStore = { store: vectoreStore, title, text, describtion };
   return resultStore;
 }
@@ -22,5 +22,5 @@ export async function addEmbeding(text: string, id: Id<"files">) {
     text,
     id,
   });
-
+  revalidatePath("/dashboard/documents");
 }

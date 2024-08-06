@@ -16,9 +16,9 @@ export type GenerateDataType = Awaited<ReturnType<typeof addAndGenerateData>>;
 
 export type ProviderType = {
   showModal: boolean;
-  resultGenerateData: GenerateDataType | undefined;
-  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
-  setResultGenerateData: React.Dispatch<
+/*   resultGenerateData: GenerateDataType | undefined;
+ */  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+ /*  setResultGenerateData: React.Dispatch<
     React.SetStateAction<GenerateDataType | undefined>
-  >;
+  >; */
 };

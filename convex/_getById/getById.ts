@@ -13,7 +13,7 @@ export const getDocumentByFileId = internalQuery({
   handler: async (ctx, { id }) => {
     const file = await ctx.db
       .query("documents")
-      .withIndex("byFileId", (i) => i.eq("fileId", id))
+      .filter((q) => q.eq(q.field("fileId"), id))
       .collect();
     return file;
   },

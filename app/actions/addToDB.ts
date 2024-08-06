@@ -11,7 +11,7 @@ export async function generateAndAddToDB(fileCard: FileCard) {
   const parser = new StringOutputParser();
   const messages = [
     new SystemMessage(
-      "Need short and accurate text,text might be from 10 to 20 words, on topic - if i read this following text what i learn?This text might start from words - Learn"
+      "Need short and accurate text,text might be from 10 to 15 words, on topic - if i read this following text what i learn?This text might start from words - Learn"
     ),
     new HumanMessage(fileCard.text),
   ];
