@@ -9,13 +9,12 @@ import { api } from "@/convex/_generated/api";
 import UploadButton from "@/components/UploadButton";
 import Link from "next/link";
 
-export const dynamic = "force-dynamic";
 
 const DocumentsPage = async () => {
   const documents = await fetchQuery(api._getAll.getAll.getAllFiles);
   return (
-    <div className="w-full">
-      <UploadButton />
+    <div className="w-full"> 
+      <UploadButton />   {/* need add delete card feature */}
       <p>My Documents</p>
       <div className="grid grid-cols-4 gap-2">
       {documents.map((doc) => (

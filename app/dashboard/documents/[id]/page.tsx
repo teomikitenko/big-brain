@@ -3,6 +3,8 @@ import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import DocInteraction from "@/components/DocInteraction";
 
+export const dynamic = "force-dynamic";
+
 export default async function DocPage({
   params,
 }: {

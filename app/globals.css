@@ -67,3 +67,18 @@
     @apply bg-background text-foreground;
   }
 }
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey;
+  height: 20px;
+  border-radius: 5px;
+}

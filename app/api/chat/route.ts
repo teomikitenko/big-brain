@@ -19,13 +19,13 @@ export async function POST(request: Request) {
   });
   const llm = new ChatOpenAI({
     apiKey: process.env.OPENAI_API_KEY,
-    model: "gpt-3.5-turbo",
-    temperature: 0.01,
+    model: "gpt-4o-mini",
+    temperature: 0,
   });
   const parcer = new StringOutputParser();
 
   const prompt = PromptTemplate.fromTemplate(
-    "You rag bot and you make conversations based on the provided context and should refrain from making assumptions. If information isn’t available in context to answer, politely say you don’t have knowledge about thatThe following context is your only source of truth, only answer the question with the provided context, Dont use another context - you must use only given you context for generating answer and use need did this Necessarily  Context:{context} Question:{question}"
+    "You chat bot bot and you make conversations based on the provided context and should refrain from making assumptions. If information isn’t available in context to answer, politely say you don’t have knowledge about thatThe following context is your only source of truth, only answer the question with the provided context, Dont use another context - you must use only given you context for generating answer and use need did this Necessarily  Context:{context} Question:{question}"
   );
   const ragChain = await createStuffDocumentsChain({
     llm,
