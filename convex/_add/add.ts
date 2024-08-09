@@ -19,3 +19,13 @@ export const addEmbeddings = internalMutation({
     await ctx.db.insert("documents", { embedding, fileId, text });
   },
 });
+export const addNoteEmbeddings = internalMutation({
+  args: {
+    embedding: v.array(v.number()),
+    text: v.string(),
+    title:v.string()
+  },
+  handler: async (ctx, { embedding, title, text }) => {
+    await ctx.db.insert('notes', { embedding, title, text });
+  },
+});

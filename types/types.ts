@@ -14,11 +14,12 @@ export type ResultStore = {
 export type ConvexVectorStoreType = Awaited<ReturnType<typeof addEmbeding>>;
 export type GenerateDataType = Awaited<ReturnType<typeof addAndGenerateData>>;
 
+export type ModalType = {
+  show: boolean;
+  type:'uploadDoc'|'createNote'|undefined
+}
+
 export type ProviderType = {
-  showModal: boolean;
-/*   resultGenerateData: GenerateDataType | undefined;
- */  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
- /*  setResultGenerateData: React.Dispatch<
-    React.SetStateAction<GenerateDataType | undefined>
-  >; */
+  modalData: ModalType;
+  setModalData: React.Dispatch<React.SetStateAction<ModalType>>;
 };

@@ -3,23 +3,17 @@
 import React, { useState } from "react";
 import { createContext } from "react";
 import type { ProviderType } from "@/types/types";
+import { ModalType } from "@/types/types";
 
-export const ModalContext = createContext<ProviderType | null>(null); // let see ProviderType types.deletes some actions
+export const ModalContext = createContext<ProviderType | null>(null); 
 
 const Provider = ({ children }: { children: React.ReactNode }) => {
-  const [showModal, setShowModal] = useState(false);
-/*   const [resultGenerateData, setResultGenerateData] = useState<
-    ProviderType["resultGenerateData"] | undefined
-  >(); */
+  const [modalData, setModalData] = useState<ModalType>({
+    show: false,
+    type: undefined
+  });
   return (
-    <ModalContext.Provider
-      value={{
-        showModal,
-        setShowModal,
-       /*  resultGenerateData,
-        setResultGenerateData, */
-      }}
-    >
+    <ModalContext.Provider value={{ modalData, setModalData }}>
       {children}
     </ModalContext.Provider>
   );

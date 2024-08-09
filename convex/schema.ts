@@ -19,4 +19,12 @@ export default defineSchema({
     key: v.string(),
     value: v.any(),
   }).index("byKey", ["key"]),
+  notes: defineTable({
+    embedding: v.array(v.number()),
+    title: v.string(),
+    text: v.string(),
+  }).vectorIndex("byNotes", {
+    vectorField: "embedding",
+    dimensions: 1536,
+  }),
 });

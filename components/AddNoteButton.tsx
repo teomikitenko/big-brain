@@ -1,26 +1,27 @@
 "use client";
 import { Button } from "./ui/button";
-import { useContext } from "react";
+import { AddIcon } from "./Icons";
 import { ModalContext } from "./Provider";
-import { DownloadIcon } from "./Icons";
+import { useContext } from "react";
 
-const UploadButton = () => {
+const AddNoteButton = () => {
   const context = useContext(ModalContext);
   return (
     <Button
-      className="flex gap-2"
-      variant="secondary"
       onClick={() =>
         context?.setModalData({
           show: true,
-          type: "uploadDoc",
+          type: "createNote",
         })
       }
+      size="sm"
+      variant="secondary"
+      className="flex gap-2"
     >
-      <DownloadIcon />
-      <p>Upload Document</p>
+      <AddIcon />
+      <p>Create Note</p>
     </Button>
   );
 };
 
-export default UploadButton;
+export default AddNoteButton;

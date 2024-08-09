@@ -13,6 +13,7 @@ export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
   const { prompt: question, id } = await request.json();
+
   const myId = id.replace(/[\[\]"]+/g, "");
   const { text } = await fetchAction(api._chat.chat.answer, {
     id: myId,

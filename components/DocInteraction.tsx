@@ -13,7 +13,7 @@ const DocInteraction = ({ doc }: { doc: Doc<"files"> }) => {
   return (
     <div className="flex flex-col gap-3">
       <div className="flex justify-between">
-        <h2 className="text-slate-100 text-3xl font-bold">{doc.title}</h2>
+        <h1 className="text-slate-100 text-3xl font-bold">{doc.title}</h1>
         <Button size="sm" variant="destructive" className="flex gap-2"> {/* add delete feauters */}
          <DeleteIcon/>
           <p>Delete</p>

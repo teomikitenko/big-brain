@@ -1,8 +1,9 @@
 import React from 'react'
+import NotesComponent from '@/components/NotesComponent'
 
 const Notes = () => {
   return (
-    <div>Notes</div>
+   <NotesComponent/>
   )
 }
 
