@@ -1,12 +1,12 @@
-import React from "react";
-import Link from "next/link";
-import * as Icons from "./Icons";
+import React from 'react';
+import Link from 'next/link';
+import * as Icons from './Icons';
 
 const NavigationPanel = () => {
   const nav = [
-    { title: "Search", link: "/dashboard/search", icon: <Icons.SearchIcon /> },
-    { title: "Documents", link: "/dashboard/documents", icon: <Icons.DocumentIcon /> },
-    { title: "Notes", link: "/dashboard/notes", icon: <Icons.NotesIcon /> },
+    { title: 'Search', link: '/dashboard/search', icon: <Icons.SearchIcon /> },
+    { title: 'Documents', link: '/dashboard/documents', icon: <Icons.DocumentIcon /> },
+    { title: 'Notes', link: '/dashboard/notes', icon: <Icons.NotesIcon /> },
   ];
   return (
     <div className="h-full pl-0 pr-14 flex flex-col gap-6 ">

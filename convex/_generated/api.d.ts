@@ -18,6 +18,7 @@ import type * as langchain_db from "../langchain/db.js";
 import type * as _add_add from "../_add/add.js";
 import type * as _chat_chat from "../_chat/chat.js";
 import type * as _create_load from "../_create/load.js";
+import type * as _delete_delete from "../_delete/delete.js";
 import type * as _getAll_getAll from "../_getAll/getAll.js";
 import type * as _getById_getById from "../_getById/getById.js";
 import type * as _search_search from "../_search/search.js";
@@ -36,6 +37,7 @@ declare const fullApi: ApiFromModules<{
   "_add/add": typeof _add_add;
   "_chat/chat": typeof _chat_chat;
   "_create/load": typeof _create_load;
+  "_delete/delete": typeof _delete_delete;
   "_getAll/getAll": typeof _getAll_getAll;
   "_getById/getById": typeof _getById_getById;
   "_search/search": typeof _search_search;

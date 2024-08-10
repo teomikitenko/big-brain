@@ -164,13 +164,4 @@ const Note = () => {
   );
 };
 
-export {
-  DocumentIcon,
-  SearchIcon,
-  NotesIcon,
-  DownloadIcon,
-  DeleteIcon,
-  AddIcon,
-  Note,
-  Document,
-};
+export { DocumentIcon, SearchIcon, NotesIcon, DownloadIcon, DeleteIcon, AddIcon, Note, Document };

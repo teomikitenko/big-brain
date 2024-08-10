@@ -1,30 +1,31 @@
-import { defineSchema, defineTable } from "convex/server";
-import { v } from "convex/values";
+import { defineSchema, defineTable } from 'convex/server';
+import { v } from 'convex/values';
 
 export default defineSchema({
   documents: defineTable({
     embedding: v.array(v.number()),
-    fileId: v.id("files"),
+    fileId: v.id('files'),
     text: v.string(),
-  }).vectorIndex("byEmbedding", {
-    vectorField: "embedding",
+  }).vectorIndex('byEmbedding', {
+    vectorField: 'embedding',
     dimensions: 1536,
   }),
   files: defineTable({
     title: v.string(),
     describtion: v.string(),
     text: v.string(),
-  }).index("by_title", ["title"]),
+    documentId: v.optional(v.id('documents')),
+  }).index('by_title', ['title']),
   cache: defineTable({
     key: v.string(),
     value: v.any(),
-  }).index("byKey", ["key"]),
+  }).index('byKey', ['key']),
   notes: defineTable({
     embedding: v.array(v.number()),
     title: v.string(),
     text: v.string(),
-  }).vectorIndex("byNotes", {
-    vectorField: "embedding",
+  }).vectorIndex('byNotes', {
+    vectorField: 'embedding',
     dimensions: 1536,
   }),
 });

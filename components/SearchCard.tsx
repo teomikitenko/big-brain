@@ -1,19 +1,31 @@
-import React from 'react'
-import { Document } from "./Icons";
-import { Doc } from '@/convex/_generated/dataModel';
+import React from 'react';
+import { Note, Document } from './Icons';
+import Link from 'next/link';
+import type { NotesType, DocsType } from '@/types/types';
 
-const SearchCard = ({res}:{res:Doc<'documents'>}) => {
+const SearchCard = ({ searchResult }: { searchResult: DocsType | NotesType }) => {
+  const path =
+    searchResult.type === 'documents' ? `documents/${searchResult.data.fileId}` : `notes/${searchResult.data._id}`;
   return (
-    <div className="flex flex-col w-full gap-2 bg-[#1d293b] p-3 text-slate-100">
-    <div className="flex gap-1 items-center">
-     <Document/>
-    <h1>Document</h1>
-     </div> 
-     <p className="line-clamp-2">
-       {res.text}
-     </p>
-   </div>
-  )
-}
+    <Link href={`/dashboard/${path}`}>
+      <div className="flex flex-col w-full gap-2 bg-[#1d293b] p-3 text-slate-100">
+        <div className="flex gap-1 items-center">
+          {searchResult.type === 'documents' ? (
+            <>
+              <Document />
+              <h1>Document</h1>
+            </>
+          ) : (
+            <>
+              <Note />
+              <h1>Note</h1>
+            </>
+          )}
+        </div>
+        <p className="line-clamp-2">{searchResult.data.text}</p>
+      </div>
+    </Link>
+  );
+};
 
-export default SearchCard
+export default SearchCard;

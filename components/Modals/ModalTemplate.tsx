@@ -1,15 +1,9 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import { ProviderType } from "@/types/types";
-import { addAndGenerateData } from "@/app/actions/addAndGenerateData";
-import { addNote } from "@/app/actions/addNote";
-import CreateNoteForm from "../Forms/CreateNote";
-import UploadDocsForm from "./UploadDocs";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { ProviderType } from '@/types/types';
+import { addAndGenerateData } from '@/app/actions/addAndGenerateData';
+import { addNote } from '@/app/actions/addNote';
+import CreateNoteForm from '../Forms/CreateNote';
+import UploadDocsForm from '../Forms/UploadDocs';
 
 const ModalTemplate = ({ context }: { context: ProviderType | null }) => {
   const sendFile = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -32,24 +26,20 @@ const ModalTemplate = ({ context }: { context: ProviderType | null }) => {
   };
   return (
     <Dialog
-      onOpenChange={(e) =>
-        context?.setModalData({ show: e, type: context.modalData.type })
-      }
+      onOpenChange={(e) => context?.setModalData({ show: e, type: context.modalData.type })}
       open={context?.modalData.show}
     >
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>
-            {context?.modalData.type === "uploadDoc"
-              ? "Upload a Document"
-              : "Create Note"}
+          <DialogTitle className="text-slate-200">
+            {context?.modalData.type === 'uploadDoc' ? 'Upload a Document' : 'Create Note'}
           </DialogTitle>
-          <DialogDescription>
-            {context?.modalData.type === "uploadDoc"
-              ? "Upload a team document for you to search over in the future"
-              : "Create you own note to search over in the future"}
+          <DialogDescription className="text-slate-300">
+            {context?.modalData.type === 'uploadDoc'
+              ? 'Upload a team document for you to search over in the future'
+              : 'Create you own note to search over in the future'}
           </DialogDescription>
-          {context?.modalData.type === "uploadDoc" ? (
+          {context?.modalData.type === 'uploadDoc' ? (
             <UploadDocsForm sendFile={sendFile} />
           ) : (
             <CreateNoteForm createNote={createNote} />

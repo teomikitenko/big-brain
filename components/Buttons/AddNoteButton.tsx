@@ -1,8 +1,8 @@
-"use client";
-import { Button } from "./ui/button";
-import { AddIcon } from "./Icons";
-import { ModalContext } from "./Provider";
-import { useContext } from "react";
+'use client';
+import { Button } from '../ui/button';
+import { AddIcon } from '../Icons';
+import { ModalContext } from '../Provider';
+import { useContext } from 'react';
 
 const AddNoteButton = () => {
   const context = useContext(ModalContext);
@@ -11,7 +11,7 @@ const AddNoteButton = () => {
       onClick={() =>
         context?.setModalData({
           show: true,
-          type: "createNote",
+          type: 'createNote',
         })
       }
       size="sm"

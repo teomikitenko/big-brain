@@ -1,16 +1,16 @@
-"use client";
-import { useState } from "react";
-import { Button } from "./ui/button";
-import { Note, Document } from "./Icons";
-import vectoreSearch from "@/app/actions/search";
-import { Doc } from "@/convex/_generated/dataModel";
-import SearchCard from "./SearchCard";
+'use client';
+import { useState } from 'react';
+import { Button } from './ui/button';
+import vectoreSearch from '@/app/actions/search';
+import SearchCard from './SearchCard';
+import type { SearchResultType } from '@/types/types';
 
 const SearchComponent = () => {
-  const [searchResults, setSearchResults] = useState<Doc<"documents">[]>([]);
+  const [searchResults, setSearchResults] = useState<SearchResultType>();
   const sendSearchQuery = async (formData: FormData) => {
-    setSearchResults([]);
+    setSearchResults(undefined);
     const res = await vectoreSearch(formData);
+    console.log(res);
     setSearchResults(res);
   };
   return (
@@ -28,9 +28,10 @@ const SearchComponent = () => {
         </Button>
       </form>
       <div className="flex flex-col gap-2">
-        {searchResults.map((res) => (
-          <SearchCard key={res._id} res={res} />
+        {searchResults?.documents.map((res) => (
+          <SearchCard key={res._id} searchResult={{ data: res, type: 'documents' }} />
         ))}
+        {searchResults?.notes.map((res) => <SearchCard key={res._id} searchResult={{ data: res, type: 'note' }} />)}
       </div>
     </div>
   );
