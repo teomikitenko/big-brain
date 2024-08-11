@@ -5,6 +5,8 @@ import vectoreSearch from '@/app/actions/search';
 import SearchCard from './SearchCard';
 import type { SearchResultType } from '@/types/types';
 
+export const dynamic = 'force-dynamic';
+
 const SearchComponent = () => {
   const [searchResults, setSearchResults] = useState<SearchResultType>();
   const sendSearchQuery = async (formData: FormData) => {
