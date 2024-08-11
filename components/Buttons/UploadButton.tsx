@@ -18,7 +18,7 @@ const UploadButton = () => {
       }
     >
       <DownloadIcon />
-      <p className='hidden md:inline'>Upload Document</p>
+      <p className="hidden md:inline">Upload Document</p>
     </Button>
   );
 };

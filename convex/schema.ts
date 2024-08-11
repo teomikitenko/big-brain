@@ -14,7 +14,7 @@ export default defineSchema({
     title: v.string(),
     describtion: v.string(),
     text: v.string(),
-    documentId: v.union(v.string(),v.id('files')) ,
+    documentId: v.union(v.string(), v.id('documents')),
   }).index('by_title', ['title']),
   cache: defineTable({
     key: v.string(),
