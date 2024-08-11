@@ -3,6 +3,9 @@ import { api } from '@/convex/_generated/api';
 import UploadButton from '@/components/Buttons/UploadButton';
 import Link from 'next/link';
 import CardComponent from '@/components/Card';
+
+export const dynamic = 'force-dynamic'
+
 const DocumentsPage = async () => {
   const files = await fetchQuery(api._getAll.getAll.getAllFiles);
   return (
