@@ -16,7 +16,7 @@ const DocInteraction = ({ doc }: { doc: Doc<'files'> }) => {
         <DeleteButton
           data={{
             id: doc._id,
-            documentId: doc.documentId as Id<'documents'>,
+            documentId: doc.documentId!,
             type: 'file',
           }}
         />
