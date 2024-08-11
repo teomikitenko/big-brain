@@ -13,7 +13,7 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="w-full h-full flex grow mt-16 bg-stone-950 ">
+    <main className="w-full h-full flex grow mt-16">
       <div className="h-full w-full flex px-8 pt-10">
         <Provider>
           <Navigation />

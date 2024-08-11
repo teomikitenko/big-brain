@@ -3,11 +3,11 @@ import type { FilesType, NotesType } from '@/types/types';
 
 const CardComponent = ({ data }: { data: FilesType | NotesType }) => {
   return (
-    <Card>
+    <Card >
       <CardHeader>
-        <CardTitle>{data.data.title}</CardTitle>
+        <CardTitle className=' text-lg sm:text-xl md:text-xl' >{data.data.title}</CardTitle>
         {data.type === 'files' ? (
-          <CardDescription className="text-pretty">{data.data.describtion}</CardDescription>
+          <CardDescription className="text-pretty text-sm md:text-base">{data.data.describtion}</CardDescription>
         ) : (
           <CardDescription className="break-words text-pretty">{data.data.text}</CardDescription>
         )}
