@@ -5,7 +5,7 @@ import { internalMutation } from '../_generated/server';
 export const addCard = mutation({
   args: { title: v.string(), describtion: v.string(), text: v.string() },
   handler: async (ctx, { title, describtion, text }) => {
-    const taskId = await ctx.db.insert('files', { title, describtion, text });
+    const taskId = await ctx.db.insert('files', { title, describtion, text,documentId:'' });
     return taskId;
   },
 });
