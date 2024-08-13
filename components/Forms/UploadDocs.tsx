@@ -9,7 +9,7 @@ const UploadDocsForm = ({ sendFile }: { sendFile: (e: React.FormEvent<HTMLFormEl
       <label className="text-slate-200" htmlFor="file">
         File
       </label>
-      <input type="file" className="flex rounded-md p-2 text-sm bg-stone-950 text-slate-200 " name="file" />
+      <input type="file" accept='text/plain' className="flex rounded-md p-2 text-sm bg-stone-950 text-slate-200 " name="file" />
       <div>
         <Button type="submit" size="custom" variant="secondary">
           Upload

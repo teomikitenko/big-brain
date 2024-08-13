@@ -29,14 +29,14 @@ const ModalTemplate = ({ context }: { context: ProviderType | null }) => {
       onOpenChange={(e) => context?.setModalData({ show: e, type: context.modalData.type })}
       open={context?.modalData.show}
     >
-      <DialogContent>
+      <DialogContent >
         <DialogHeader>
           <DialogTitle className="text-slate-200">
             {context?.modalData.type === 'uploadDoc' ? 'Upload a Document' : 'Create Note'}
           </DialogTitle>
           <DialogDescription className="text-slate-300">
             {context?.modalData.type === 'uploadDoc'
-              ? 'Upload a team document for you to search over in the future'
+              ? 'Upload a team text document for you to search over in the future'
               : 'Create you own note to search over in the future'}
           </DialogDescription>
           {context?.modalData.type === 'uploadDoc' ? (
