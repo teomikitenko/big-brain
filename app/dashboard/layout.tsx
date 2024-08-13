@@ -13,11 +13,11 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="w-full h-full flex grow mt-16">
-      <div className="h-full w-full flex px-8 pt-10">
+    <main className="min-w-full h-full flex grow mt-16 max-w-[1500px] mx-auto">
+      <div className="h-full w-full flex px-3 md:px-6 pt-10">
         <Provider>
           <Navigation />
-          <div className="h-full px-9  w-full">{children}</div>
+          <div className="h-full px-3 sm:px-5 md:px-9 w-full">{children}</div>
           <Modal />
         </Provider>
       </div>

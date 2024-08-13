@@ -14,7 +14,7 @@ const DocumentsPage = async () => {
         <h1 className="text-slate-100 font-bold text-xl sm:text-2xl md:text-3xl">Documents</h1>
         <UploadButton />
       </div>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-rows-2 gap-3">
+      <div className="responsive-grid-cards">
         {files.map((file) => (
           <Link key={file._id} href={`documents/${file._id}`}>
             <CardComponent data={{ data: file, type: 'files' }} />

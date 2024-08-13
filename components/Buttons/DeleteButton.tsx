@@ -9,9 +9,9 @@ const DeleteButton = ({ data }: { data: FileType | NoteType }) => {
     else await deleteNotes(data.id);
   };
   return (
-    <Button onClick={defineTypeHandler} size="sm" variant="destructive" className="flex gap-2">
+    <Button onClick={defineTypeHandler} size="sm" variant="destructive" className="flex gap-2 w-fit bg-transparent md:bg-destructive">
       <DeleteIcon />
-      <p>Delete</p>
+      <p className='hidden md:inline'>Delete</p>
     </Button>
   );
 };

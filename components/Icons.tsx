@@ -73,7 +73,7 @@ const DeleteIcon = () => {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="lucide lucide-trash"
+      className="lucide lucide-trash stroke-destructive h-[25px] w-[25px] md:h-[16px] md:w-[16px] md:stroke-slate-100 "
     >
       <path d="M3 6h18" />
       <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
@@ -85,15 +85,13 @@ const AddIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="lucide lucide-plus"
+      className="lucide lucide-plus stroke-slate-100 h-[25px] w-[25px] md:h-[16px] md:w-[16px] md:stroke-black"
     >
       <path d="M5 12h14" />
       <path d="M12 5v14" />

@@ -7,9 +7,9 @@ const CardComponent = ({ data }: { data: FilesType | NotesType }) => {
       <CardHeader>
         <CardTitle className=" text-lg sm:text-xl md:text-xl">{data.data.title}</CardTitle>
         {data.type === 'files' ? (
-          <CardDescription className="text-pretty text-sm md:text-base">{data.data.describtion}</CardDescription>
+          <CardDescription className="text-pretty break-words hyphens-auto text-sm md:text-base" lang='en'>{data.data.describtion}</CardDescription>
         ) : (
-          <CardDescription className="break-words text-pretty">{data.data.text}</CardDescription>
+          <CardDescription className="break-all text-pretty hyphens-auto" lang='en'>{data.data.text}</CardDescription>
         )}
       </CardHeader>
     </Card>

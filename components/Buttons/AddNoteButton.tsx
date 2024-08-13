@@ -16,10 +16,10 @@ const AddNoteButton = () => {
       }
       size="sm"
       variant="secondary"
-      className="flex gap-2"
+      className="flex gap-2 w-fit bg-transparent md:bg-secondary"
     >
       <AddIcon />
-      <p>Create Note</p>
+      <p className="hidden md:inline">Create Note</p>
     </Button>
   );
 };
