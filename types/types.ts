@@ -25,9 +25,11 @@ export type ProviderType = {
   setModalData: React.Dispatch<React.SetStateAction<ModalType>>;
 };
 export type SearchResultType = {
-  documents: Doc<'documents'>[];
-  notes: Doc<'notes'>[];
+  documents: DocsType[];
+  notes: NotesType[];
 };
+export type SearchResultTypeArray = (DocsType| NotesType)[];
+
 
 export type FilesType = {
   data: Doc<'files'>;

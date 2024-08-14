@@ -21,7 +21,7 @@ export const vectoreSearchDocument = action({
     });
     const filteredDocuments = documentResults.filter((result) => result._score >= 0.8);
     const filteredNotes = notesResults.filter((result) => result._score >= 0.8);
-    const results: SearchResultType = await ctx.runQuery(internal._search.search.searchDocumentByVectores, {
+    const results:SearchResultType = await ctx.runQuery(internal._search.search.searchDocumentByVectores, {
       documentsIds: filteredDocuments?.map((result) => result._id),
       notesIds: filteredNotes?.map((result) => result._id),
     });

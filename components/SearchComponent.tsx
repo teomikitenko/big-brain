@@ -3,19 +3,20 @@ import { useState } from 'react';
 import { Button } from './ui/button';
 import vectoreSearch from '@/app/actions/search';
 import SearchCard from './SearchCard';
-import type { SearchResultType } from '@/types/types';
+import type { SearchResultTypeArray } from '@/types/types';
 import { Search } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
 const SearchComponent = () => {
   const [inputState, setInputState] = useState('');
-  const [searchResults, setSearchResults] = useState<SearchResultType>();
+  const [searchResults, setSearchResults] = useState<SearchResultTypeArray | undefined>();
   const sendSearchQuery = async (formData: FormData) => {
     setSearchResults(undefined);
     const res = await vectoreSearch(formData);
-    setSearchResults(res);
-    setInputState('')
+    const resultArr = [...res.documents, ...res.notes];
+    setSearchResults(resultArr);
+    setInputState('');
   };
   return (
     <div className="flex flex-col gap-3">
@@ -24,13 +25,13 @@ const SearchComponent = () => {
         <input
           type="text"
           name="search"
-          onChange={(e)=>setInputState(e.currentTarget.value)}
+          onChange={(e) => setInputState(e.currentTarget.value)}
           value={inputState}
           className="rounded-md p-1 border-white border outline-0 bg-stone-950 text-slate-100 grow"
           placeholder="Search over all you notes and documents using vector searching"
         />
         <Button
-          className="flex max-[640px]:focus-visible:ring-0 max-[640px]:hover:bg-transparent justify-center px-1 py-0 sm:px-4 sm:py-2 items-center text-slate-200 bg-transparent hover:bg-slate-00 sm:bg-secondary"
+          className="flex  justify-center px-1 py-0 sm:px-4 sm:py-2 items-center text-slate-200 bg-transparent hover:bg-slate-00 sm:bg-secondary"
           type="submit"
         >
           <p className="hidden sm:inline text-slate-900">Search</p>
@@ -38,10 +39,13 @@ const SearchComponent = () => {
         </Button>
       </form>
       <div className="flex flex-col gap-2">
-        {searchResults?.documents.map((res) => (
-          <SearchCard key={res._id} searchResult={{ data: res, type: 'documents' }} />
-        ))}
-        {searchResults?.notes.map((res) => <SearchCard key={res._id} searchResult={{ data: res, type: 'note' }} />)}
+        {searchResults && searchResults.length > 0 ? (
+          searchResults?.map((res) => {
+            return <SearchCard key={res.data._id} searchResult={res} />;
+          })
+        ) : searchResults?.length === 0 && (
+          <p className="text-gray-500">No results</p>
+        )}
       </div>
     </div>
   );

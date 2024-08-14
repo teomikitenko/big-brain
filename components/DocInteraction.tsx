@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Chat from './Chat';
 import { Button } from './ui/button';
-import { Doc, Id } from '@/convex/_generated/dataModel';
+import { Doc } from '@/convex/_generated/dataModel';
 import DocumentComponent from './DocumentComponent';
 import DeleteButton from './Buttons/DeleteButton';
 
