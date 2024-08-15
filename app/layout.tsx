@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: 'app',
+    card: 'summary',
     title: 'Big brain',
     description: 'BigBrain acts as your team`s second brain, storing all your docs and allowing easy vector search',
     images:['https://big-brain-ecru.vercel.app/logo.png']
