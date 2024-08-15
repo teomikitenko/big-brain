@@ -1,41 +1,41 @@
-import { ImageResponse } from 'next/og';
-// App router includes @vercel/og.
-// No need to install it.
-export const dynamic = 'force-dynamic'
-
-export async function GET() {
+// Import required modules and constants
+import { ImageResponse } from "next/og";
+import { NextRequest } from "next/server";
+ 
+// Route segment config
+export const runtime = "edge";
+ 
+// Define a function to handle GET requests
+export async function GET(req: NextRequest) {
+  // Extract title from query parameters
+  const { searchParams } = req.nextUrl;
+  const postTitle = searchParams.get("title");
+ 
+  // Fetch the Outfit font from the specified URL
+ 
+  // Create an ImageResponse with dynamic content
   return new ImageResponse(
     (
       <div
         style={{
-          fontSize: 40,
-          display: 'flex',
-          justifyContent:'space-between',
-          backgroundColor:'white'
+          height: "100%",
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          justifyContent: "space-between",
         }}
       >
-        <h2> BigBrain acts as your team's second brain, storing all your docs and allowing easy vector search.</h2>
-        <div
-         style={{
-          position:'relative',
-          width:'100px',
-          height:'100px'
-        }}
-        >
-        <img 
-        style={{
-        position:'absolute',
-        width:'100%',
-        height:'100%'
-        }}
-        src="https://big-brain-ecru.vercel.app//logo.png" alt="logo" />
-        </div>
-          
+        <h2>Hello big brain</h2>
+          <img src="hhttps://big-brain-ecru.vercel.app/logo.png" alt="logo" />  
+   
       </div>
     ),
+    // ImageResponse options
     {
-      width: 1200,
-      height: 630,
+      width: 1920,
+      height: 1080,
+   
     },
   );
 }
