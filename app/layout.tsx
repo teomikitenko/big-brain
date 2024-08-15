@@ -25,10 +25,16 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: 'player',
+    card: 'app',
     title: 'Big brain',
     description: 'BigBrain acts as your team`s second brain, storing all your docs and allowing easy vector search',
-    images: ['https://big-brain-ecru.vercel.app/logo.png'],
+    images: 
+      {
+        url: 'https://big-brain-ecru.vercel.app/logo.png',
+        width: 300,
+        height: 300,
+        alt: 'Big Brain Logo',
+      },
   },
 };
 export default function RootLayout({
