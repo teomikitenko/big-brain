@@ -28,11 +28,7 @@ export const metadata: Metadata = {
     card: 'app',
     title: 'Big brain',
     description: 'BigBrain acts as your team`s second brain, storing all your docs and allowing easy vector search',
-    images: 
-      {
-        url: 'https://big-brain-ecru.vercel.app/logo.png',
-        alt: 'Big Brain Logo',
-      },
+    images:['https://big-brain-ecru.vercel.app/logo.png']
   },
 };
 export default function RootLayout({
