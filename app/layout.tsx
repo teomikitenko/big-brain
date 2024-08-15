@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   icons: '/icon.png',
   openGraph: {
     title: 'Big brain',
-    url: 'https://big-brain-ecru.vercel.app/',
+    url: 'https://big-brain-ecru.vercel.app',
     siteName: 'Big brain',
     images: [
       {
