@@ -1,24 +1,20 @@
 import { ImageResponse } from 'next/og';
 // App router includes @vercel/og.
 // No need to install it.
- 
+
 export async function GET() {
   return new ImageResponse(
     (
       <div
         style={{
           fontSize: 40,
-          color: 'black',
-          background: 'white',
-          width: '100%',
-          height: '100%',
-          padding: '50px 200px',
-          textAlign: 'center',
-          justifyContent: 'center',
-          alignItems: 'center',
+          display: 'flex',
+          justifyContent:'space-between',
+          backgroundColor:'white'
         }}
       >
-        👋 Hello
+        <h2> BigBrain acts as your team's second brain, storing all your docs and allowing easy vector search.</h2>
+        <img src="https://big-brain-ecru.vercel.app//logo.png" alt="" />
       </div>
     ),
     {
