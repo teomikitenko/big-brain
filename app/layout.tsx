@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'Big brain',
     images: [
       {
-        url: 'https://big-brain-ecru.vercel.app/api/og',
+        url: 'https://big-brain-ecru.vercel.app//api/og',
         width: '500',
         height: '500',
       },
