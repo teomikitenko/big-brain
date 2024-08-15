@@ -27,7 +27,7 @@ export async function GET(req: NextRequest) {
         }}
       >
         <h2>Hello big brain</h2>
-          <img src="https://big-brain-ecru.vercel.app/logo.png" alt="logo" />  
+         {/*  <img src="https://big-brain-ecru.vercel.app/logo.png" alt="logo" />   */}
    
       </div>
     ),
