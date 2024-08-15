@@ -39,13 +39,11 @@ const SearchComponent = () => {
         </Button>
       </form>
       <div className="flex flex-col gap-2">
-        {searchResults && searchResults.length > 0 ? (
-          searchResults?.map((res) => {
-            return <SearchCard key={res.data._id} searchResult={res} />;
-          })
-        ) : searchResults?.length === 0 && (
-          <p className="text-gray-500">No results</p>
-        )}
+        {searchResults && searchResults.length > 0
+          ? searchResults?.map((res) => {
+              return <SearchCard key={res.data._id} searchResult={res} />;
+            })
+          : searchResults?.length === 0 && <p className="text-gray-500">No results</p>}
       </div>
     </div>
   );

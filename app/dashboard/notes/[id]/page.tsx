@@ -2,6 +2,13 @@ import { fetchQuery } from 'convex/nextjs';
 import { api } from '@/convex/_generated/api';
 import { Id } from '@/convex/_generated/dataModel';
 import DeleteButton from '@/components/Buttons/DeleteButton';
+import { Metadata } from 'next/types';
+
+export const dynamic = 'force-dynamic';
+
+export const metadata: Metadata = {
+  title: 'Note',
+};
 
 const NotePage = async ({ params }: { params: { id: Id<'notes'> } }) => {
   const note = await fetchQuery(api._getById.getById.getByIdNote, {

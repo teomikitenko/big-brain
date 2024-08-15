@@ -3,8 +3,13 @@ import { api } from '@/convex/_generated/api';
 import UploadButton from '@/components/Buttons/UploadButton';
 import Link from 'next/link';
 import CardComponent from '@/components/Card';
+import type { Metadata } from 'next'
+
 
 export const dynamic = 'force-dynamic';
+export const metadata: Metadata = {
+  title: 'Documents',
+};
 
 const DocumentsPage = async () => {
   const files = await fetchQuery(api._getAll.getAll.getAllFiles);
