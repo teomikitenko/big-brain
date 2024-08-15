@@ -5,8 +5,6 @@ import Header from '@/components/Header';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export const dynamic = 'force-dynamic'
-
 export const metadata: Metadata = {
   title: {
     template: '%s | Big Brain',
@@ -21,8 +19,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: 'https://big-brain-ecru.vercel.app/logo.png',
-        width: 500,
-        height: 500,
+        width: 300,
+        height: 300,
       },
     ],
   },
