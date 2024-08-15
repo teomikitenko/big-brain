@@ -24,12 +24,12 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter:{
-    card:'summary',
-    title:'Big brain',
+  twitter: {
+    card: 'player',
+    title: 'Big brain',
     description: 'BigBrain acts as your team`s second brain, storing all your docs and allowing easy vector search',
-    images: ['https://big-brain-ecru.vercel.app/logo.png']
-  }
+    images: ['https://big-brain-ecru.vercel.app/logo.png'],
+  },
 };
 export default function RootLayout({
   children,
