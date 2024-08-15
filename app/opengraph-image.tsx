@@ -39,7 +39,7 @@ export default async function Image() {
               border:'1px',
               borderRadius:'65px'
             }}
-            src="http://localhost:3000/logo.png"
+            src="https://big-brain-ecru.vercel.app/logo.png"
             alt="logo"
           />
    
