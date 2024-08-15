@@ -13,11 +13,12 @@ export const metadata: Metadata = {
   icons: '/icon.png',
   openGraph: {
     title: 'Big brain',
+    description: 'BigBrain acts as your team`s second brain, storing all your docs and allowing easy vector search',
     url: 'https://big-brain-ecru.vercel.app',
     siteName: 'Big brain',
     images: [
       {
-        url: 'https://big-brain-ecru.vercel.app/api/og',
+        url: 'https://big-brain-ecru.vercel.app/logo.png',
         width: '500',
         height: '500',
       },
