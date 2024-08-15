@@ -10,19 +10,20 @@ export const metadata: Metadata = {
     template: '%s | Big Brain',
     default: 'Big Brain',
   },
+  metadataBase: new URL('http://localhost:3000'),
   icons: '/icon.png',
   openGraph: {
-    title: 'Big brain',
-    description: 'BigBrain acts as your team`s second brain, storing all your docs and allowing easy vector search',
-    url: 'https://big-brain-ecru.vercel.app',
+   /*  title: 'Big brain',
+    description: 'BigBrain acts as your team`s second brain, storing all your docs and allowing easy vector search', */
+    /* url: 'https://big-brain-ecru.vercel.app', */
     siteName: 'Big brain',
-    images: [
+   /*  images: [
       {
         url: 'https://big-brain-ecru.vercel.app/logo.png',
         width: '500',
         height: '500',
       },
-    ],
+    ], */
   },
 };
 
