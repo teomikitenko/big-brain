@@ -31,8 +31,6 @@ export const metadata: Metadata = {
     images: 
       {
         url: 'https://big-brain-ecru.vercel.app/logo.png',
-        width: 300,
-        height: 300,
         alt: 'Big Brain Logo',
       },
   },
