@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     description: 'BigBrain acts as your team`s second brain, storing all your docs and allowing easy vector search',
     images: [
       {
-        url: '/logo.png',
+        url: 'https://big-brain-ecru.vercel.app/logo.png',
         width: 800,
         height: 600,
       },
