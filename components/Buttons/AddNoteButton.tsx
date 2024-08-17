@@ -16,7 +16,7 @@ const AddNoteButton = () => {
       }
       size="sm"
       variant="secondary"
-      className="flex gap-2 w-fit bg-transparent md:bg-secondary"
+      className="flex gap-2 w-fit bg-transparent md:bg-secondary hover:bg-transparent md:hover:bg-secondary/80 "
     >
       <AddIcon />
       <p className="hidden md:inline">Create Note</p>

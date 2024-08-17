@@ -21,13 +21,13 @@ export const searchDocumentByVectores = internalQuery({
       documentsIds.map(async (id) => {
         const doc = await ctx.db.get(id);
 
-        if (doc) documentArray.push({data:doc,type:'documents'});
+        if (doc) documentArray?.push({ data: doc, type: 'documents' });
       }),
     );
     await Promise.all(
       notesIds.map(async (id) => {
         const note = await ctx.db.get(id);
-        if (note) notesArray.push({data:note,type:'note'});
+        if (note) notesArray?.push({ data: note, type: 'note' });
       }),
     );
     return { documents: documentArray, notes: notesArray };

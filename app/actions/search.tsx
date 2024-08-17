@@ -1,5 +1,6 @@
 'use server';
 import { api } from '@/convex/_generated/api';
+import { SearchResultType } from '@/types/types';
 import { fetchAction } from 'convex/nextjs';
 
 export default async function vectoreSearch(formData: FormData) {
@@ -7,5 +8,5 @@ export default async function vectoreSearch(formData: FormData) {
   const search = await fetchAction(api._vectoreSearch.searchData.vectoreSearchDocument, {
     searchQuery: searchQuery as string,
   });
-  return search;
+  return search
 }

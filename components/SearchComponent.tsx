@@ -1,27 +1,17 @@
 'use client';
-import { useState } from 'react';
 import { Button } from './ui/button';
-import vectoreSearch from '@/app/actions/search';
 import SearchCard from './SearchCard';
-import type { SearchResultTypeArray } from '@/types/types';
-import { Search } from 'lucide-react';
+import { LoaderCircle, Search } from 'lucide-react';
+import useSearchQuery from '@/hooks/useSearchQuery';
 
 export const dynamic = 'force-dynamic';
 
 const SearchComponent = () => {
-  const [inputState, setInputState] = useState('');
-  const [searchResults, setSearchResults] = useState<SearchResultTypeArray | undefined>();
-  const sendSearchQuery = async (formData: FormData) => {
-    setSearchResults(undefined);
-    const res = await vectoreSearch(formData);
-    const resultArr = [...res.documents, ...res.notes];
-    setSearchResults(resultArr);
-    setInputState('');
-  };
+  const { sendSearchQuery, status, inputState, setInputState, searchResults } = useSearchQuery();
   return (
     <div className="flex flex-col gap-3">
       <h1 className="text-slate-100 font-bold text-xl sm:text-2xl md:text-3xl">Search</h1>
-      <form className="flex gap-1 justify-around sm:gap-2" action={(e) => sendSearchQuery(e)}>
+      <form className="flex gap-1 justify-around sm:gap-2" onSubmit={(e) => sendSearchQuery(e)}>
         <input
           type="text"
           name="search"
@@ -31,11 +21,17 @@ const SearchComponent = () => {
           placeholder="Search over all you notes and documents using vector searching"
         />
         <Button
-          className="flex  justify-center px-1 py-0 sm:px-4 sm:py-2 items-center text-slate-200 bg-transparent hover:bg-slate-00 sm:bg-secondary"
+          className="flex  justify-center px-1 py-0 sm:px-4 sm:py-2 items-center text-slate-200 bg-transparent hover:bg-slate-200 sm:bg-secondary"
           type="submit"
         >
-          <p className="hidden sm:inline text-slate-900">Search</p>
-          <Search className="block sm:hidden" size={28} strokeWidth={1.25} />
+          {status === 'loading' ? (
+            <LoaderCircle size={28} className="animate-spin stroke-slate-600 stroke-2 sm:w-11" />
+          ) : (
+            <>
+              <p className="hidden sm:inline text-slate-900">Search</p>
+              <Search className="block sm:hidden" size={28} strokeWidth={1.25} />
+            </>
+          )}
         </Button>
       </form>
       <div className="flex flex-col gap-2">

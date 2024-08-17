@@ -1,7 +1,16 @@
-import { Button } from '../ui/button';
+import { FormEvent, useTransition } from 'react';
+import SubmitModal from '../Buttons/SubmitModal';
 const CreateNoteForm = ({ createNote }: { createNote: (e: React.FormEvent<HTMLFormElement>) => Promise<void> }) => {
+  const [isPending, startTransition] = useTransition();
+  const create = (e:FormEvent<HTMLFormElement>)=>{
+   startTransition(
+    async()=>{
+      await createNote(e)
+    }
+   )
+  }
   return (
-    <form onSubmit={(e) => createNote(e)} className="flex flex-col gap-2">
+    <form onSubmit={create} className="flex flex-col gap-2">
       <label className="text-slate-200" htmlFor="title">
         Title
       </label>
@@ -16,9 +25,7 @@ const CreateNoteForm = ({ createNote }: { createNote: (e: React.FormEvent<HTMLFo
         name="text"
       />
       <div>
-        <Button type="submit" size="custom" variant="secondary">
-          Create
-        </Button>
+        <SubmitModal pending ={isPending} key='createNote'/>
       </div>
     </form>
   );

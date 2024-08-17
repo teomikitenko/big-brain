@@ -4,11 +4,11 @@ import { Id } from '../convex/_generated/dataModel';
 import { useParams } from 'next/navigation';
 import { Button } from './ui/button';
 import { FormEvent } from 'react';
-import { Send } from 'lucide-react';
+import { LoaderCircle, Send } from 'lucide-react';
 
 const Chat = () => {
   const { id } = useParams<{ id: Id<'files'> }>();
-  const { completion, input, handleInputChange, complete, setInput } = useCompletion({
+  const { completion, input, handleInputChange, complete, setInput, isLoading } = useCompletion({
     api: '/api/chat',
     body: { id: JSON.stringify(id) },
   });
@@ -35,9 +35,18 @@ const Chat = () => {
           value={input}
           onChange={handleInputChange}
         />
-        <Button className="flex justify-center px-1 py-0 sm:px-4 sm:py-2 items-center bg-transparent sm:bg-secondary" type="submit">
-          <p className="hidden sm:inline text-slate-950">Submit</p>
-          <Send className="block sm:hidden" size={30} strokeWidth={1.25} />
+        <Button
+          className="flex  justify-center hover:bg-transparent  sm:hover:bg-secondary px-1 py-0 sm:px-4 sm:py-2 items-center bg-transparent sm:bg-secondary"
+          type="submit"
+        >
+          {isLoading ? (
+            <LoaderCircle size={28} className="animate-spin stroke-slate-600 stroke-2 sm:w-11" />
+          ) : (
+            <>
+              <p className="hidden sm:inline text-slate-950">Submit</p>
+              <Send className="block sm:hidden" size={30} strokeWidth={1.25} />
+            </>
+          )}
         </Button>
       </form>
     </div>
