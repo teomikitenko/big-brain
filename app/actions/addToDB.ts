@@ -1,10 +1,11 @@
 'use server';
+
+import { api } from '@/convex/_generated/api';
+import type { FileCard } from '@/types/types';
 import { HumanMessage, SystemMessage } from '@langchain/core/messages';
 import { StringOutputParser } from '@langchain/core/output_parsers';
 import { ChatOpenAI } from '@langchain/openai';
 import { fetchMutation } from 'convex/nextjs';
-import { api } from '@/convex/_generated/api';
-import type { FileCard } from '@/types/types';
 
 export async function generateAndAddToDB(fileCard: FileCard) {
   const model = new ChatOpenAI({ model: 'gpt-4o-mini' });

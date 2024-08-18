@@ -1,8 +1,8 @@
-import React from 'react';
 import NotesComponent from '@/components/NotesComponent';
-import { fetchQuery } from 'convex/nextjs';
 import { api } from '@/convex/_generated/api';
+import { fetchQuery } from 'convex/nextjs';
 import { Metadata } from 'next/types';
+import React from 'react';
 
 export const dynamic = 'force-dynamic';
 

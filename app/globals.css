@@ -87,6 +87,6 @@ input::file-selector-button {
 }
 @layer components {
   .responsive-grid-cards {
-    @apply grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-rows-2 gap-3
+    @apply grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-rows-2 gap-3;
   }
 }

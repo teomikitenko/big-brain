@@ -1,4 +1,5 @@
 /* eslint-disable */
+
 /**
  * Generated utilities for implementing server-side Convex query and mutation functions.
  *
@@ -8,7 +9,6 @@
  * To regenerate, run `npx convex dev`.
  * @module
  */
-
 import {
   actionGeneric,
   httpActionGeneric,
@@ -17,7 +17,7 @@ import {
   internalActionGeneric,
   internalMutationGeneric,
   internalQueryGeneric,
-} from "convex/server";
+} from 'convex/server';
 
 /**
  * Define a query in this Convex app's public API.

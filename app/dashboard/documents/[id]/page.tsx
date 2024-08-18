@@ -1,7 +1,7 @@
-import { fetchQuery } from 'convex/nextjs';
+import DocInteraction from '@/components/DocInteraction';
 import { api } from '@/convex/_generated/api';
 import { Id } from '@/convex/_generated/dataModel';
-import DocInteraction from '@/components/DocInteraction';
+import { fetchQuery } from 'convex/nextjs';
 import { Metadata } from 'next/types';
 
 export const dynamic = 'force-dynamic';

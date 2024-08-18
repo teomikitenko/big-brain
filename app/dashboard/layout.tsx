@@ -1,7 +1,8 @@
-import type { Metadata } from 'next';
+import Modal from '@/components/Modal';
 import Navigation from '@/components/Navigation';
 import Provider from '@/components/Provider';
-import Modal from '@/components/Modal';
+import type { Metadata } from 'next';
+
 export const metadata: Metadata = {
   title: {
     template: 'Big Brain | %s',

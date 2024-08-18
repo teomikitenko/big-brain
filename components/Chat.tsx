@@ -1,10 +1,11 @@
 'use client';
-import { useCompletion } from 'ai/react';
+
 import { Id } from '../convex/_generated/dataModel';
-import { useParams } from 'next/navigation';
 import { Button } from './ui/button';
-import { FormEvent } from 'react';
+import { useCompletion } from 'ai/react';
 import { LoaderCircle, Send } from 'lucide-react';
+import { useParams } from 'next/navigation';
+import { FormEvent } from 'react';
 
 const Chat = () => {
   const { id } = useParams<{ id: Id<'files'> }>();

@@ -1,8 +1,8 @@
-import { v } from 'convex/values';
 import { internal } from '../_generated/api';
 import { action } from '../_generated/server';
-import { OpenAIEmbeddings } from '@langchain/openai';
 import type { SearchResultType } from '@/types/types';
+import { OpenAIEmbeddings } from '@langchain/openai';
+import { v } from 'convex/values';
 
 export const vectoreSearchDocument = action({
   args: {
@@ -21,7 +21,7 @@ export const vectoreSearchDocument = action({
     });
     const filteredDocuments = documentResults.filter((result) => result._score >= 0.8);
     const filteredNotes = notesResults.filter((result) => result._score >= 0.8);
-    const results:SearchResultType = await ctx.runQuery(internal._search.search.searchDocumentByVectores, {
+    const results: SearchResultType = await ctx.runQuery(internal._search.search.searchDocumentByVectores, {
       documentsIds: filteredDocuments?.map((result) => result._id),
       notesIds: filteredNotes?.map((result) => result._id),
     });

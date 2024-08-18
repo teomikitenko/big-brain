@@ -28,8 +28,7 @@ export type SearchResultType = {
   documents: DocsType[];
   notes: NotesType[];
 };
-export type SearchResultTypeArray = (DocsType| NotesType)[];
-
+export type SearchResultTypeArray = (DocsType | NotesType)[];
 
 export type FilesType = {
   data: Doc<'files'>;

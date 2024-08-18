@@ -1,8 +1,9 @@
 'use client';
+
+import { DownloadIcon } from '../Icons';
+import { ModalContext } from '../Provider';
 import { Button } from '../ui/button';
 import { useContext } from 'react';
-import { ModalContext } from '../Provider';
-import { DownloadIcon } from '../Icons';
 
 const UploadButton = () => {
   const context = useContext(ModalContext);

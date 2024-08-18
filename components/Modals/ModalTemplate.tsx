@@ -1,9 +1,9 @@
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { ProviderType } from '@/types/types';
-import { addAndGenerateData } from '@/app/actions/addAndGenerateData';
-import { addNote } from '@/app/actions/addNote';
 import CreateNoteForm from '../Forms/CreateNote';
 import UploadDocsForm from '../Forms/UploadDocs';
+import { addAndGenerateData } from '@/app/actions/addAndGenerateData';
+import { addNote } from '@/app/actions/addNote';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { ProviderType } from '@/types/types';
 
 const ModalTemplate = ({ context }: { context: ProviderType | null }) => {
   const sendFile = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -29,7 +29,7 @@ const ModalTemplate = ({ context }: { context: ProviderType | null }) => {
       onOpenChange={(e) => context?.setModalData({ show: e, type: context.modalData.type })}
       open={context?.modalData.show}
     >
-      <DialogContent >
+      <DialogContent>
         <DialogHeader>
           <DialogTitle className="text-slate-200">
             {context?.modalData.type === 'uploadDoc' ? 'Upload a Document' : 'Create Note'}

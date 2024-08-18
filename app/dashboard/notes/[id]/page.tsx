@@ -1,7 +1,7 @@
-import { fetchQuery } from 'convex/nextjs';
+import DeleteButton from '@/components/Buttons/DeleteButton';
 import { api } from '@/convex/_generated/api';
 import { Id } from '@/convex/_generated/dataModel';
-import DeleteButton from '@/components/Buttons/DeleteButton';
+import { fetchQuery } from 'convex/nextjs';
 import { Metadata } from 'next/types';
 
 export const dynamic = 'force-dynamic';

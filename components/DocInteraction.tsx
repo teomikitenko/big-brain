@@ -1,10 +1,11 @@
 'use client';
-import React, { useState } from 'react';
+
+import DeleteButton from './Buttons/DeleteButton';
 import Chat from './Chat';
+import DocumentComponent from './DocumentComponent';
 import { Button } from './ui/button';
 import { Doc } from '@/convex/_generated/dataModel';
-import DocumentComponent from './DocumentComponent';
-import DeleteButton from './Buttons/DeleteButton';
+import { useState } from 'react';
 
 const DocInteraction = ({ doc }: { doc: Doc<'files'> }) => {
   const [choiceAction, setChoiceAction] = useState('document');

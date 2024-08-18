@@ -1,10 +1,9 @@
-import { fetchQuery } from 'convex/nextjs';
-import { api } from '@/convex/_generated/api';
 import UploadButton from '@/components/Buttons/UploadButton';
-import Link from 'next/link';
 import CardComponent from '@/components/Card';
-import type { Metadata } from 'next'
-
+import { api } from '@/convex/_generated/api';
+import { fetchQuery } from 'convex/nextjs';
+import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const dynamic = 'force-dynamic';
 export const metadata: Metadata = {

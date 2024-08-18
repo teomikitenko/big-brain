@@ -1,7 +1,7 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,7 +21,6 @@ export const metadata: Metadata = {
     card: 'summary',
     title: 'Big brain',
     description: 'BigBrain acts as your team`s second brain, storing all your docs and allowing easy vector search',
-    images:['https://big-brain-ecru.vercel.app/logo.png']
   },
 };
 export default function RootLayout({

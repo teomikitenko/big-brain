@@ -1,13 +1,11 @@
-import { StreamingTextResponse, LangChainAdapter } from 'ai';
 import { api } from '@/convex/_generated/api';
-import { fetchAction } from 'convex/nextjs';
 import { StringOutputParser } from '@langchain/core/output_parsers';
+import { PromptTemplate } from '@langchain/core/prompts';
 import { ChatOpenAI } from '@langchain/openai';
-
+import { StreamingTextResponse, LangChainAdapter } from 'ai';
+import { fetchAction } from 'convex/nextjs';
 import { createStuffDocumentsChain } from 'langchain/chains/combine_documents';
 import { Document } from 'langchain/document';
-
-import { PromptTemplate } from '@langchain/core/prompts';
 
 export const dynamic = 'force-dynamic';
 

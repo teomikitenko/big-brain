@@ -1,8 +1,9 @@
 'use client';
-import { Button } from './ui/button';
+
 import SearchCard from './SearchCard';
-import { LoaderCircle, Search } from 'lucide-react';
+import { Button } from './ui/button';
 import useSearchQuery from '@/hooks/useSearchQuery';
+import { LoaderCircle, Search } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 

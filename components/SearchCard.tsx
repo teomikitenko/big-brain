@@ -1,7 +1,7 @@
-import React from 'react';
 import { Note, Document } from './Icons';
-import Link from 'next/link';
 import type { NotesType, DocsType } from '@/types/types';
+import Link from 'next/link';
+import React from 'react';
 
 const SearchCard = ({ searchResult }: { searchResult: DocsType | NotesType }) => {
   const path =

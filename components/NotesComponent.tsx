@@ -1,6 +1,6 @@
-import { Doc } from '@/convex/_generated/dataModel';
 import AddNoteButton from './Buttons/AddNoteButton';
 import CardComponent from './Card';
+import { Doc } from '@/convex/_generated/dataModel';
 import Link from 'next/link';
 
 export const dynamic = 'force-dynamic';

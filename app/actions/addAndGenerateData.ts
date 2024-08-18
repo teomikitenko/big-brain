@@ -1,8 +1,9 @@
 'use server';
+
+import { generateAndAddToDB } from './addToDB';
 import { api } from '@/convex/_generated/api';
 import { Id } from '@/convex/_generated/dataModel';
 import { fetchAction } from 'convex/nextjs';
-import { generateAndAddToDB } from './addToDB';
 import { revalidatePath } from 'next/cache';
 
 export async function addAndGenerateData(formData: FormData) {

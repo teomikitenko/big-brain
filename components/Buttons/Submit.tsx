@@ -1,6 +1,6 @@
+import { Button } from '../ui/button';
 import { LoaderCircle, Search } from 'lucide-react';
 import React from 'react';
-import { Button } from '../ui/button';
 import { useFormStatus } from 'react-dom';
 
 const Submit = () => {

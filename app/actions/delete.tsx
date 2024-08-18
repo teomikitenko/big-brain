@@ -1,10 +1,11 @@
 'use server';
+
 import { api } from '@/convex/_generated/api';
-import { fetchMutation } from 'convex/nextjs';
 import { Id } from '@/convex/_generated/dataModel';
-import { redirect } from 'next/navigation';
-import { revalidatePath } from 'next/cache';
 import { FileType } from '@/types/types';
+import { fetchMutation } from 'convex/nextjs';
+import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
 
 export async function deleteData(deleteObj: Omit<FileType, 'type'>) {
   await fetchMutation(api._delete.delete.deleteFile, { id: deleteObj.id, documentId: deleteObj.documentId });

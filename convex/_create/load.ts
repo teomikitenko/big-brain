@@ -1,8 +1,8 @@
-import { v } from 'convex/values';
-import { action } from '../_generated/server';
-import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter';
-import { OpenAIEmbeddings } from '@langchain/openai';
 import { internal } from '../_generated/api';
+import { action } from '../_generated/server';
+import { OpenAIEmbeddings } from '@langchain/openai';
+import { v } from 'convex/values';
+import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter';
 
 export const loadEmbeddings = action({
   args: {

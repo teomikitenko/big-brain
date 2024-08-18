@@ -1,6 +1,7 @@
 import { internalQuery } from '../_generated/server';
-import { v } from 'convex/values';
 import { SearchResultType } from '@/types/types';
+import { v } from 'convex/values';
+
 export const searchDocument = internalQuery({
   args: { id: v.id('files') },
   handler: async (ctx, { id }) => {

@@ -1,14 +1,13 @@
-import { FormEvent, useTransition } from "react";
-import SubmitModal from "../Buttons/SubmitModal";
+import SubmitModal from '../Buttons/SubmitModal';
+import { FormEvent, useTransition } from 'react';
+
 const UploadDocsForm = ({ sendFile }: { sendFile: (e: React.FormEvent<HTMLFormElement>) => Promise<void> }) => {
   const [isPending, startTransition] = useTransition();
-  const upload = (e:FormEvent<HTMLFormElement>)=>{
-    startTransition(
-     async()=>{
-       await sendFile(e)
-     }
-    )
-   }
+  const upload = (e: FormEvent<HTMLFormElement>) => {
+    startTransition(async () => {
+      await sendFile(e);
+    });
+  };
   return (
     <form onSubmit={(e) => upload(e)} className="flex flex-col gap-2">
       <label htmlFor="title" className="text-slate-200">
@@ -18,9 +17,14 @@ const UploadDocsForm = ({ sendFile }: { sendFile: (e: React.FormEvent<HTMLFormEl
       <label className="text-slate-200" htmlFor="file">
         File
       </label>
-      <input type="file" accept='text/plain' className="flex rounded-md bg-stone-950 p-2 text-sm text-slate-200" name="file" />
+      <input
+        type="file"
+        accept="text/plain"
+        className="flex rounded-md bg-stone-950 p-2 text-sm text-slate-200"
+        name="file"
+      />
       <div>
-        <SubmitModal pending={isPending} key='upload'/>
+        <SubmitModal pending={isPending} key="upload" />
       </div>
     </form>
   );

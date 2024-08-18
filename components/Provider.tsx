@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
-import { createContext } from 'react';
 import type { ProviderType } from '@/types/types';
 import { ModalType } from '@/types/types';
+import React, { useState } from 'react';
+import { createContext } from 'react';
 
 export const ModalContext = createContext<ProviderType | null>(null);
 

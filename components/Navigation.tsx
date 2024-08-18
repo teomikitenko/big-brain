@@ -1,6 +1,6 @@
-import React from 'react';
-import Link from 'next/link';
 import * as Icons from './Icons';
+import Link from 'next/link';
+import React from 'react';
 
 const NavigationPanel = () => {
   const nav = [
