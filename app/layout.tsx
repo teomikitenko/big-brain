@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     default: 'Big Brain',
   },
   metadataBase: new URL('https://big-brain-ecru.vercel.app'),
-  icons: '/icon.png',
+  icons: '/logo.png',
   openGraph: {
     title: 'Big Brain',
     siteName: 'Big brain',
