@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     title: 'Big Brain',
     siteName: 'Big brain',
     description: 'BigBrain acts as your team`s second brain, storing all your docs and allowing easy vector search',
+    images:[]
   },
   twitter: {
     card: 'summary',
