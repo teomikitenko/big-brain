@@ -73,7 +73,7 @@ const DeleteIcon = () => {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="lucide lucide-trash stroke-destructive h-[25px] w-[25px] md:h-[16px] md:w-[16px] md:stroke-slate-100 "
+      className="lucide lucide-trash size-[25px] stroke-destructive md:size-[16px] md:stroke-slate-100 "
     >
       <path d="M3 6h18" />
       <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6" />
@@ -91,7 +91,7 @@ const AddIcon = () => {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="lucide lucide-plus stroke-slate-100 h-[25px] w-[25px] md:h-[16px] md:w-[16px] md:stroke-black"
+      className="lucide lucide-plus size-[25px] stroke-slate-100 md:size-[16px] md:stroke-black"
     >
       <path d="M5 12h14" />
       <path d="M12 5v14" />
@@ -108,7 +108,7 @@ const DownloadIcon = () => {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="icon icon-tabler icons-tabler-outline icon-tabler-upload stroke-slate-100 h-[25px] w-[25px] md:h-[16px] md:w-[16px] md:stroke-black"
+      className="icon icon-tabler icons-tabler-outline icon-tabler-upload size-[25px] stroke-slate-100 md:size-[16px] md:stroke-black"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />

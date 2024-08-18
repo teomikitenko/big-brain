@@ -9,12 +9,12 @@ const NavigationPanel = () => {
     { title: 'Notes', link: '/dashboard/notes', icon: <Icons.NotesIcon /> },
   ];
   return (
-    <div className="sticky top-20 h-fit pl-0 pr-6 md:pr-14 pt-5 flex flex-col gap-6 ">
+    <div className="sticky top-20 flex h-fit flex-col gap-6 pl-0 pr-6 pt-5 md:pr-14 ">
       {nav.map((l) => (
         <Link key={l.title} href={l.link}>
           <div className="flex gap-1 ">
             {l.icon}
-            <p className="text-slate-100 hidden md:inline">{l.title}</p>
+            <p className="hidden text-slate-100 md:inline">{l.title}</p>
           </div>
         </Link>
       ))}

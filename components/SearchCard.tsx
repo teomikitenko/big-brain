@@ -8,8 +8,8 @@ const SearchCard = ({ searchResult }: { searchResult: DocsType | NotesType }) =>
     searchResult.type === 'documents' ? `documents/${searchResult.data.fileId}` : `notes/${searchResult.data._id}`;
   return (
     <Link href={`/dashboard/${path}`}>
-      <div className="flex flex-col w-full gap-2 bg-[#1d293b] p-3 text-slate-100">
-        <div className="flex gap-1 items-center">
+      <div className="flex w-full flex-col gap-2 bg-[#1d293b] p-3 text-slate-100">
+        <div className="flex items-center gap-1">
           {searchResult.type === 'documents' ? (
             <>
               <Document />

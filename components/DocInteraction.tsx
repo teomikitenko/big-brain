@@ -12,7 +12,7 @@ const DocInteraction = ({ doc }: { doc: Doc<'files'> }) => {
   return (
     <div className="flex flex-col gap-3">
       <div className="flex justify-between">
-        <h1 className="text-slate-100 text-3xl font-bold">{doc.title}</h1>
+        <h1 className="text-3xl font-bold text-slate-100">{doc.title}</h1>
         <DeleteButton
           data={{
             id: doc._id,
@@ -23,7 +23,7 @@ const DocInteraction = ({ doc }: { doc: Doc<'files'> }) => {
       </div>
 
       <div className="flex flex-col gap-3">
-        <div className="flex gap-2 rounded-md bg-[#5b5b5b] w-fit p-1">
+        <div className="flex w-fit gap-2 rounded-md bg-[#5b5b5b] p-1">
           <Button
             className={`bg-transparent ${choiceAction === 'document' && 'bg-stone-950'}`}
             onClick={() => setChoiceAction('document')}

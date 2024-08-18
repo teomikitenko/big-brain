@@ -19,31 +19,31 @@ const Chat = () => {
   };
 
   return (
-    <div className="flex flex-col bg-primary min-h-[25rem] px-3 py-5">
-      <div className="grow flex flex-col gap-2">
-        <div className="bg-[#010415] px-2 py-1 rounded-lg min-h-0">
+    <div className="flex min-h-[25rem] flex-col bg-primary px-3 py-5">
+      <div className="flex grow flex-col gap-2">
+        <div className="min-h-0 rounded-lg bg-[#010415] px-2 py-1">
           <p className="text-slate-100">Ask any question using AI about this document below</p>
         </div>
-        <div className={`${completion && 'bg-[#010415]'}  px-2 py-1 rounded-lg min-h-0`}>
+        <div className={`${completion && 'bg-[#010415]'}  min-h-0 rounded-lg px-2 py-1`}>
           <p className="text-slate-100">{completion}</p>
         </div>
       </div>
-      <form className="flex gap-1 justify-around sm:gap-2 w-full mt-4" onSubmit={sendToAi}>
+      <form className="mt-4 flex w-full justify-around gap-1 sm:gap-2" onSubmit={sendToAi}>
         <input
-          className="rounded-md p-1 border-white border outline-0 bg-stone-950 text-slate-100 w-[85%] sm:grow "
+          className="w-[85%] rounded-md border border-white bg-stone-950 p-1 text-slate-100 outline-0 sm:grow "
           name="prompt"
           value={input}
           onChange={handleInputChange}
         />
         <Button
-          className="flex  justify-center hover:bg-transparent  sm:hover:bg-secondary px-1 py-0 sm:px-4 sm:py-2 items-center bg-transparent sm:bg-secondary"
+          className="flex  items-center justify-center  bg-transparent px-1 py-0 hover:bg-transparent sm:bg-secondary sm:px-4 sm:py-2 sm:hover:bg-secondary"
           type="submit"
         >
           {isLoading ? (
             <LoaderCircle size={28} className="animate-spin stroke-slate-600 stroke-2 sm:w-11" />
           ) : (
             <>
-              <p className="hidden sm:inline text-slate-950">Submit</p>
+              <p className="hidden text-slate-950 sm:inline">Submit</p>
               <Send className="block sm:hidden" size={30} strokeWidth={1.25} />
             </>
           )}

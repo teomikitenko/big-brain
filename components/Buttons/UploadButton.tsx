@@ -8,7 +8,7 @@ const UploadButton = () => {
   const context = useContext(ModalContext);
   return (
     <Button
-      className="flex gap-2 w-fit bg-transparent md:bg-secondary"
+      className="flex w-fit gap-2 bg-transparent md:bg-secondary"
       variant="secondary"
       onClick={() =>
         context?.setModalData({

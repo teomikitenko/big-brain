@@ -5,7 +5,7 @@ import { LoaderCircle } from 'lucide-react';
 const SubmitModal = ({pending}:{pending:boolean}) => {
   return (
     <Button
-      className="flex  justify-center px-4 py-0 sm:px-4 sm:py-2 hover:bg-secondary items-center bg-secondary"
+      className="flex  items-center justify-center bg-secondary px-4 py-0 hover:bg-secondary sm:px-4 sm:py-2"
       type="submit"
     >
        {pending ? (
