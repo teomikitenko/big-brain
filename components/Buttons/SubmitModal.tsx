@@ -33,7 +33,7 @@ const SubmitModal = ({ pending, type }: { pending: boolean; type: 'create' | 'de
             context?.setModalData({
               show: false,
               type: undefined,
-              deleteData:undefined
+              deleteData: undefined,
             })
           }
           className="grow"

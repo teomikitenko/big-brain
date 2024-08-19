@@ -11,7 +11,7 @@ const Provider = ({ children }: { children: React.ReactNode }) => {
   const [modalData, setModalData] = useState<ModalType>({
     show: false,
     type: undefined,
-    deleteData:undefined
+    deleteData: undefined,
   });
   return <ModalContext.Provider value={{ modalData, setModalData }}>{children}</ModalContext.Provider>;
 };
