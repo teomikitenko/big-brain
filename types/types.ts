@@ -2,6 +2,12 @@ import { addEmbeding } from '@/app/actions/addAndGenerateData';
 import { addAndGenerateData } from '@/app/actions/addAndGenerateData';
 import { Doc, Id } from '@/convex/_generated/dataModel';
 
+export type NavItemType = {
+  title: string;
+  link: string;
+  icon: React.JSX.Element;
+};
+
 export type FileCard = {
   title: string;
   text: string;
