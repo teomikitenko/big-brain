@@ -23,7 +23,6 @@ const DeleteForm = ({
       }, 100);
     });
   };
-  console.log('delete form')
   return (
     <form onSubmit={deleteHandler} className="flex flex-col gap-2">
       <div>
