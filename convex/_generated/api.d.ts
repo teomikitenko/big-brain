@@ -1,5 +1,4 @@
 /* eslint-disable */
-
 /**
  * Generated `api` utility.
  *
@@ -9,16 +8,21 @@
  * To regenerate, run `npx convex dev`.
  * @module
  */
-import type * as _add_add from '../_add/add.js';
-import type * as _chat_chat from '../_chat/chat.js';
-import type * as _create_load from '../_create/load.js';
-import type * as _delete_delete from '../_delete/delete.js';
-import type * as _getAll_getAll from '../_getAll/getAll.js';
-import type * as _getById_getById from '../_getById/getById.js';
-import type * as _search_search from '../_search/search.js';
-import type * as _vectoreSearch_searchData from '../_vectoreSearch/searchData.js';
-import type * as langchain_db from '../langchain/db.js';
-import type { ApiFromModules, FilterApi, FunctionReference } from 'convex/server';
+
+import type {
+  ApiFromModules,
+  FilterApi,
+  FunctionReference,
+} from "convex/server";
+import type * as langchain_db from "../langchain/db.js";
+import type * as _add_add from "../_add/add.js";
+import type * as _chat_chat from "../_chat/chat.js";
+import type * as _create_load from "../_create/load.js";
+import type * as _delete_delete from "../_delete/delete.js";
+import type * as _getAll_getAll from "../_getAll/getAll.js";
+import type * as _getById_getById from "../_getById/getById.js";
+import type * as _search_search from "../_search/search.js";
+import type * as _vectoreSearch_searchData from "../_vectoreSearch/searchData.js";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -29,15 +33,21 @@ import type { ApiFromModules, FilterApi, FunctionReference } from 'convex/server
  * ```
  */
 declare const fullApi: ApiFromModules<{
-  'langchain/db': typeof langchain_db;
-  '_add/add': typeof _add_add;
-  '_chat/chat': typeof _chat_chat;
-  '_create/load': typeof _create_load;
-  '_delete/delete': typeof _delete_delete;
-  '_getAll/getAll': typeof _getAll_getAll;
-  '_getById/getById': typeof _getById_getById;
-  '_search/search': typeof _search_search;
-  '_vectoreSearch/searchData': typeof _vectoreSearch_searchData;
+  "langchain/db": typeof langchain_db;
+  "_add/add": typeof _add_add;
+  "_chat/chat": typeof _chat_chat;
+  "_create/load": typeof _create_load;
+  "_delete/delete": typeof _delete_delete;
+  "_getAll/getAll": typeof _getAll_getAll;
+  "_getById/getById": typeof _getById_getById;
+  "_search/search": typeof _search_search;
+  "_vectoreSearch/searchData": typeof _vectoreSearch_searchData;
 }>;
-export declare const api: FilterApi<typeof fullApi, FunctionReference<any, 'public'>>;
-export declare const internal: FilterApi<typeof fullApi, FunctionReference<any, 'internal'>>;
+export declare const api: FilterApi<
+  typeof fullApi,
+  FunctionReference<any, "public">
+>;
+export declare const internal: FilterApi<
+  typeof fullApi,
+  FunctionReference<any, "internal">
+>;

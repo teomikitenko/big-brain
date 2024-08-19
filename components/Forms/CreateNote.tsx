@@ -24,7 +24,7 @@ const CreateNoteForm = ({ createNote }: { createNote: (e: React.FormEvent<HTMLFo
         name="text"
       />
       <div>
-        <SubmitModal pending={isPending} key="createNote" />
+        <SubmitModal pending={isPending} key="createNote" type='create' />
       </div>
     </form>
   );

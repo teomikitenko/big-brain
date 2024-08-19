@@ -6,7 +6,7 @@ import { useContext } from 'react';
 
 const Modal = () => {
   const context = useContext(ModalContext);
-  return <ModalTemplate context={context} />;
+  return context?.modalData.type && <ModalTemplate context={context} />;
 };
 
 export default Modal;

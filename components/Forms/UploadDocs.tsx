@@ -24,7 +24,7 @@ const UploadDocsForm = ({ sendFile }: { sendFile: (e: React.FormEvent<HTMLFormEl
         name="file"
       />
       <div>
-        <SubmitModal pending={isPending} key="upload" />
+        <SubmitModal pending={isPending} key="upload" type="create" />
       </div>
     </form>
   );

@@ -2,17 +2,23 @@
 
 import { DeleteIcon } from '../Icons';
 import { Button } from '../ui/button';
-import { deleteData, deleteNotes } from '@/app/actions/delete';
+import { useContext } from 'react';
+
+import { ModalContext } from '../Provider';
+
 import type { FileType, NoteType } from '@/types/types';
 
 const DeleteButton = ({ data }: { data: FileType | NoteType }) => {
-  const defineTypeHandler = async () => {
-    if (data.type === 'file') await deleteData({ id: data.id, documentId: data.documentId });
-    else await deleteNotes(data.id);
-  };
+  const context = useContext(ModalContext);
   return (
     <Button
-      onClick={defineTypeHandler}
+      onClick={() =>
+        context?.setModalData({
+          show: true,
+          type: data.type === 'file'? 'deleteDoc':'deleteNote',
+          deleteData:data
+        })
+      }
       size="sm"
       variant="destructive"
       className="flex w-fit gap-2 bg-transparent md:bg-destructive"

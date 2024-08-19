@@ -23,7 +23,8 @@ export type GenerateDataType = Awaited<ReturnType<typeof addAndGenerateData>>;
 
 export type ModalType = {
   show: boolean;
-  type: 'uploadDoc' | 'createNote' | undefined;
+  type: 'uploadDoc' | 'createNote' | 'deleteNote' | 'deleteDoc' | undefined;
+  deleteData?: FileType | NoteType | undefined;
 };
 
 export type ProviderType = {
